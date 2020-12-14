@@ -1,0 +1,14 @@
+personalInfomation:
+  phone: tel
+  mail: txtMail
+  confilmMail: txtMail2
+  name: txtName
+  yomikana: txtKana
+  address:
+    zip: txtZip
+    choume: lstChome
+    ban: txtBan
+    gou: txtGgo
+    building: txtBldg
+    roomNumber: txtRoom
+trashSpace: lstOutPlace

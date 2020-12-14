@@ -1,0 +1,11 @@
+personal-information:
+  phone: "XXX1234XXXX"
+  name: "東京 太郎"
+  name-yomikana: "Tokyo Tarou"
+  address:
+    zip: "XXX-XXXX"
+    choume: "hoge町"
+    house-number: "XX-XX-XX"
+    building: "hogehogeビルディング"
+    room-number: "XXX号室"
+  trash-space: "玄関前"

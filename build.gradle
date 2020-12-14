@@ -1,0 +1,40 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.1'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'ninfox'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '15'
+
+repositories {
+	mavenCentral()
+	jcenter()
+}
+
+dependencies {
+	
+	implementation 'com.google.guava:guava:23.0'
+    implementation 'com.codeborne:selenide:5.13.1'
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'info.picocli:picocli-spring-boot-starter:4.5.2'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	annotationProcessor 'info.picocli:picocli-codegen:4.5.2'
+
+    // Use JUnit test framework
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.5.2'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+compileJava {
+    // https://github.com/remkop/picocli/tree/master/picocli-codegen#221-recommended-options
+    options.compilerArgs += ["-Aproject=${project.group}${project.name}"]
+}
+
+test {
+	useJUnitPlatform()
+}
