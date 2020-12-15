@@ -86,4 +86,10 @@ public class DischargerInformationPage {
     @FindBy(id = "lstOutPlace")
     private SelenideElement trashSpace;
 
+    /**
+     * 住所を自動検索
+     */
+    @FindBy(name = "cmdZip")
+    private SelenideElement searchAddress;
+
 }

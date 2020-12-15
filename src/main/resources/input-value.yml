@@ -4,8 +4,10 @@ personal-information:
   name-yomikana: "Tokyo Tarou"
   address:
     zip: "XXX-XXXX"
-    choume: "hoge町"
-    house-number: "XX-XX-XX"
+    aza: "hogec町"
+    choume: "ZZ丁"
+    ban: "XX"
+    gou: "YY"
     building: "hogehogeビルディング"
     room-number: "XXX号室"
   trash-space: "玄関前"

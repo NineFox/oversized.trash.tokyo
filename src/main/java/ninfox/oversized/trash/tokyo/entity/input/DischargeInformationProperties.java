@@ -1,4 +1,4 @@
-package ninfox.oversized.trash.tokyo.entity;
+package ninfox.oversized.trash.tokyo.entity.input;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.ConstructorBinding;
@@ -11,7 +11,7 @@ import lombok.Getter;
 @Getter
 @ConstructorBinding
 @ConfigurationProperties(prefix = "personal-information")
-public class DischargeInfomationProperties {
+public class DischargeInformationProperties {
 
     /**
      * 電話番号

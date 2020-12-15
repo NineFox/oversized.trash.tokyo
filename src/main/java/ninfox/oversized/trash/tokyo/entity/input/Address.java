@@ -1,4 +1,4 @@
-package ninfox.oversized.trash.tokyo.entity;
+package ninfox.oversized.trash.tokyo.entity.input;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,14 +12,24 @@ public class Address {
     private String zip;
 
     /**
-     * 町名
+     * 字
+     */
+    private String aza;
+
+    /**
+     * 丁目
      */
     private String choume;
 
     /**
-     * 番地
+     * 番
      */
-    private String houseNumber;
+    private String ban;
+
+    /**
+     * 号
+     */
+    private String gou;
 
     /**
      * 建物名
