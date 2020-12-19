@@ -4,6 +4,7 @@ spring:
   config:
     import: 
       - classpath:input-value.yml
+      - classpath:mail.yml
 
 url:
   page:

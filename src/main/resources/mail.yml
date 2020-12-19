@@ -1,0 +1,7 @@
+mail:
+  imap:
+    server: imap.gmail.com
+    port: 993
+  login:
+    user: xxxxxxxxxxxx@gmail.com
+    password: xxxxxxxxxxxxx

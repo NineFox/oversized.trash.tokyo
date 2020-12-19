@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import lombok.AllArgsConstructor;
 import ninfox.oversized.trash.tokyo.service.InfInputService;
+import ninfox.oversized.trash.tokyo.service.MailService;
 import picocli.CommandLine.Command;
 
 @AllArgsConstructor
@@ -15,9 +16,12 @@ public class InputCommand implements Callable<Integer> {
 
     private InfInputService inputService;
 
+    private MailService mailService;
+
     @Override
     public Integer call() throws Exception {
-        inputService.inputMessage();
+        //inputService.inputMessage();
+        mailService.readMessage();
         return 0;
     }
 
