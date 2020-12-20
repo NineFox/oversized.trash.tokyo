@@ -6,6 +6,12 @@ spring:
       - classpath:input-value.yml
       - classpath:mail.yml
 
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+    ninfox.oversized.trash.tokyo: DEBUG
+
 url:
   page:
     top: https://sodai.tokyokankyo.or.jp/Sodai/V2Index/0/0/0/0/
