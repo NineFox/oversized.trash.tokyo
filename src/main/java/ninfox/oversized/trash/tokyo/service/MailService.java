@@ -42,14 +42,7 @@ public class MailService {
         folder.open(Folder.READ_ONLY);
 
         int messageCount = folder.getMessageCount();
-        int searchStartIndex = messageCount - number;
-
-        if (searchStartIndex < 1) {
-            searchStartIndex = messageCount - 1;
-            log.info(
-                    "getMessages() start value is illegal!! It is must > 0. So, It is setted to {}.  messageCount = {}, number = {}, messageCount - number = {}",
-                    searchStartIndex, messageCount, number, messageCount - number);
-        }
+        int searchStartIndex = this.validSearchStartIndex(number, messageCount);
 
         Message[] latestMessages = folder.getMessages(searchStartIndex, messageCount);
 
@@ -65,5 +58,35 @@ public class MailService {
                 return false;
             }
         }).collect(Collectors.toList());
+    }
+
+    /**
+     * 件名でフィルターしたメール一覧から最新日時のメールを取得する
+     * @param subject 件名
+     * @param number 最新メールから何件前までのメールを検索対象にするかの設定
+     * @return
+     * @throws MessagingException
+     */
+    public Message getFilteredLatestMessage(@NotBlank String subject, @Min(1) int number) throws MessagingException {
+        List<Message> messages = filteredSubjectMails(subject, number);
+        return messages.get(messages.size() - 1);
+    }
+
+    /**
+     * 検索件数範囲の入力チェック
+     * @param number 最新メールから何件前までのメールを検索対象にするかの設定
+     * @param messageCount メールボックスのメッセージ総数
+     * @return
+     */
+    public int validSearchStartIndex(int number, int messageCount) {
+
+        int searchStartIndex = messageCount - number;
+        if (searchStartIndex < 1) {
+            searchStartIndex = messageCount - 1;
+            log.info(
+                    "getMessages() start value is illegal!! It is must > 0. So, It is setted to {}.  messageCount = {}",
+                    searchStartIndex, messageCount);
+        }
+        return searchStartIndex;
     }
 }
