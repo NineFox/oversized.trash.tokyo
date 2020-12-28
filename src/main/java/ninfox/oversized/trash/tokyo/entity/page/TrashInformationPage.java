@@ -1,10 +1,13 @@
 package ninfox.oversized.trash.tokyo.entity.page;
 
+import javax.validation.constraints.NotNull;
+
 import org.openqa.selenium.support.FindBy;
 
 import com.codeborne.selenide.SelenideElement;
 
 import lombok.Getter;
+import ninfox.oversized.trash.tokyo.entity.input.DischargeInformationProperties;
 
 /**
  * 排出者情報入力
@@ -12,7 +15,7 @@ import lombok.Getter;
  *
  */
 @Getter
-public class DischargerInformationPage {
+public class TrashInformationPage {
 
     /**
      * 電話番号
@@ -92,4 +95,22 @@ public class DischargerInformationPage {
     @FindBy(name = "cmdZip")
     private SelenideElement searchAddress;
 
+    /**
+     * 排出者情報の入力
+     * @param dischargeInformationProperties
+     */
+    public void inputInformation(@NotNull DischargeInformationProperties dischargeInformationProperties) {
+        phone.setValue(dischargeInformationProperties.getPhone());
+        name.setValue(dischargeInformationProperties.getName());
+        zip.setValue(dischargeInformationProperties.getAddress().getZip());
+
+        searchAddress.click();
+
+        choume.selectOptionContainingText(dischargeInformationProperties.getAddress().getAza());
+        ban.setValue(dischargeInformationProperties.getAddress().getBan());
+        gou.setValue(dischargeInformationProperties.getAddress().getGou());
+        building.setValue(dischargeInformationProperties.getAddress().getBuilding());
+        roomNumber.setValue(dischargeInformationProperties.getAddress().getRoomNumber());
+        trashSpace.selectOptionContainingText(dischargeInformationProperties.getTrashSpace());
+    }
 }

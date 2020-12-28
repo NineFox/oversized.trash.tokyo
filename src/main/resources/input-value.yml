@@ -3,6 +3,7 @@ personal-information:
   name: "東京 太郎"
   name-yomikana: "Tokyo Tarou"
   address:
+    ward: "HOGE区"
     zip: "XXX-XXXX"
     aza: "hogec町"
     choume: "ZZ丁"

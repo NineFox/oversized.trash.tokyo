@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
+import ninfox.oversized.trash.tokyo.repository.MailRepository;
 import ninfox.oversized.trash.tokyo.service.InfInputService;
-import ninfox.oversized.trash.tokyo.service.MailService;
 import picocli.CommandLine.Command;
 
 @Slf4j
@@ -19,7 +19,7 @@ public class InputCommand implements Callable<Integer> {
 
     private InfInputService inputService;
 
-    private MailService mailService;
+    private MailRepository mailService;
 
     /**
      * 検索範囲のメール件数
@@ -33,7 +33,7 @@ public class InputCommand implements Callable<Integer> {
     @Value("${mail.subject}")
     private String subject;
 
-    public InputCommand(InfInputService inputService, MailService mailService) {
+    public InputCommand(InfInputService inputService, MailRepository mailService) {
         this.inputService = inputService;
         this.mailService = mailService;
     }

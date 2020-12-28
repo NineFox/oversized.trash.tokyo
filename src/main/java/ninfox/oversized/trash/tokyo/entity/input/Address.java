@@ -6,6 +6,12 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public class Address {
+
+    /**
+     * 排出区の名称
+     */
+    private String ward;
+
     /**
      * 郵便番号
      */

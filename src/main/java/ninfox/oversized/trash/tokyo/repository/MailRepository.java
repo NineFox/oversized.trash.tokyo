@@ -1,4 +1,4 @@
-package ninfox.oversized.trash.tokyo.service;
+package ninfox.oversized.trash.tokyo.repository;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,7 +12,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,8 +24,8 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @AllArgsConstructor
-@Service
-public class MailService {
+@Repository
+public class MailRepository {
 
     private final Folder folder;
 

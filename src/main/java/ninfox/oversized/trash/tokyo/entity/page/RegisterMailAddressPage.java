@@ -37,4 +37,15 @@ public class RegisterMailAddressPage {
      */
     @FindBy(className = "btn")
     private SelenideElement registerMail;
+
+    /**
+     * メールアドレス登録処理
+     * @param mailAddress
+     */
+    public void registerMail(String mailAddress) {
+        mail.setValue(mailAddress);
+        confileMail.setValue(mailAddress);
+        checkAuth.isSelected();
+        registerMail.click();
+    }
 }
